@@ -1,0 +1,35 @@
+{
+  "pages": [ 
+    "pages/Douban/Book/Book",
+    "pages/index/index",
+    "pages/Douban/movie/movies",
+    "pages/Douban/Book/bookdetails/bookdetails",
+    "pages/Douban/movie/moviedetail/moviedetail",
+    "pages/Douban/movie/toplist/toplist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "Hi",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#42bd56",
+    "navigationStyle":"custom"
+  },
+  "tabBar": {
+    "selectedColor": "#42bd56",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/Douban/Book/Book",
+        "text": "图书",
+        "iconPath": "pages/photos/books.png",
+        "selectedIconPath": "pages/photos/books-con.png"
+      },
+      {
+        "pagePath": "pages/Douban/movie/movies",
+        "text": "电影",
+        "iconPath": "pages/photos/movies.png",
+        "selectedIconPath": "pages/photos/movies-con.png"
+      }
+    ]
+  }
+}
