@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="Welcome">
+	<image class="WelcomeImg" src="../photos/Welcome.jpg"></image>
+    <view class="Newstep" bindtap="Ontap">
+      <text class="NewstepText">Api测试</text>
+    </view>
+    <view></view>
+</view>

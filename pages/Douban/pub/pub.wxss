@@ -1,0 +1,290 @@
+/* pub.wxss */
+
+.cttext {
+  width: 180rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #666;
+}
+
+.scores {
+  margin-top: 0rpx;
+  display: flex;
+}
+
+.score {
+  width: 22rpx;
+  height: 22rpx;
+  margin: auto 0;
+}
+
+.scoretext {
+  margin: auto;
+  margin-left: 10rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.ctimgs {
+  width: 160rpx;
+  height: 230rpx;
+  box-shadow: 0 0 20rpx #999;
+}
+
+.ctimg {
+  width: 160rpx;
+  height: 230rpx;
+}
+
+.bodys {
+  padding: 20rpx;
+  width: 700rpx;
+  margin: 0px;
+}
+
+.alltitle {
+  display: flex;
+  color: #999;
+  float: right;
+  vertical-align: middle;
+  height: 40rpx;
+}
+
+.head_l {
+  font-size: 30rpx;
+}
+
+.head_r {
+  line-height: 40rpx;
+  vertical-align: middle;
+}
+
+.zhankai {
+  margin-left: 10rpx;
+  width: 13rpx;
+  height: 26rpx;
+  padding: 9rpx 0rpx;
+}
+
+.contents {
+  margin: 40rpx 0px 0rpx;
+  height: 350rpx;
+  white-space: nowrap;
+}
+
+.content {
+  width: 200rpx;
+  height: 350rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.linepa {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  top: 18rpx;
+}
+
+.linedate {
+  color: #999;
+}
+
+.line {
+  margin: auto;
+  padding: auto;
+  width: 100%;
+  border-bottom: 1px solid #999;
+  border-radius: 2px;
+  background-color: #999;
+  position: relative;
+  left: 24rpx;
+}
+
+.wantseye {
+  font-size: 22rpx;
+  color: #888;
+}
+
+.toplist_top250 {
+  width: 300rpx;
+  height: 300rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  overflow: hidden;
+  font-family: Tahoma;
+  border-radius: 16rpx;
+}
+
+.toplistbody {
+  display: flex;
+  flex-direction: column;
+}
+
+.toplistname {
+  margin: auto;
+  color: white;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.toplistnameplus {
+  margin: auto;
+  color: white;
+  font-size: 20rpx;
+  margin-top: 6rpx;
+  margin-bottom: 20rpx;
+}
+
+.toplistimgs {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.toplistimg {
+  margin: auto;
+  width: 110rpx;
+  height: 165rpx;
+}
+
+.toplistimgl {
+  width: 70rpx;
+  height: 105rpx;
+}
+
+.toplistimgr {
+  width: 70rpx;
+  height: 105rpx;
+}
+
+.linepa {
+  height: 50rpx;
+  margin: 20rpx 40rpx;
+  widows: 670rpx;
+}
+
+.line {
+  width: 360rpx;
+  height: 1rpx;
+  position: relative;
+  left: 50%;
+  margin-left: -180rpx;
+  display: flex;
+}
+
+.linenumberpa {
+  margin: auto;
+  width: 160rpx;
+  height: 2rpx;
+  background-color: #333;
+}
+
+.linenumberpa1 {
+  margin: auto;
+  width: 160rpx;
+  height: 2rpx;
+  background-color: #333;
+}
+
+.linenumber {
+  margin: auto 0rpx;
+  font-family: "Algerian";
+  color: red;
+  font-size: 40rpx;
+}
+
+.listi {
+  overflow: hidden;
+  display: flex;
+  height: 300rpx;
+  flex-direction: row;
+  align-items: center;
+  margin: 40rpx;
+  position: relative;
+  border: 1px solid #999;
+  box-shadow: 0 0 20rpx #888;
+}
+
+.listi_left {
+  width: 240rpx;
+  display: flex;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.listi_img {
+  margin: auto;
+  width: 180rpx;
+  height: 270rpx;
+  z-index: 999;
+}
+
+.listi_right {
+  width: 430rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250rpx;
+  position: relative;
+  top: -10rpx;
+  left: 20rpx;
+}
+
+.scorespa {
+  margin: 12rpx 0;
+}
+
+.scoresno {
+  font-size: 12px;
+  color: #333;
+}
+
+.scorenumber {
+  font-size: 22rpx;
+  color: #333;
+  margin: auto;
+  margin-left: 6rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  color: #222;
+}
+
+.director {
+  font-size: 12px;
+  color: #333;
+}
+
+.actor {
+  font-size: 12px;
+  color: #333;
+  margin-top: 4rpx;
+}
+
+.Introduction {
+  margin: 3rpx 40rpx;
+  font-size: 14px;
+  color: #222;
+}
+
+.backimgs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.zhankai2 {
+  width: 13rpx;
+  height: 26rpx;
+  position: relative;
+  top: -175rpx;
+}

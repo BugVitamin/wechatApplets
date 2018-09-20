@@ -1,0 +1,85 @@
+<import src="../../pub/pub.wxml" />
+<!--Book.wxml-->
+
+<view class="body">
+  <view class="header">
+        <image class='goback' bindtap="goback" src='../../../photos/arrowhead.png'></image>
+    <view class="head_ti"style="">
+      <image class="backimg" src="{{data.images.large}}"></image>
+      <image style="filter: blur(0px)" class="headerimg" src="{{data.images.large}}"></image>
+    </view>
+    <view class="titles">
+      <view class="titles_left">
+        <text class="title">{{data.title}}</text>
+        <text class="author">{{data.year}}年  {{data.genres}}</text>
+        <text class="author">主演: {{data.casts[0].name}} {{data.casts[1].name}} {{data.casts[2].name}}</text>
+        <text class="author">地区: {{data.countries[0]}}</text>
+      </view>
+      <view class="titles_right">
+        <view class="bgcolor">
+          <text class="author">豆瓣评分</text>
+          <text wx:if="{{data.rating.average}}" class="scoretext">{{data.rating.average}}</text>
+          <text wx:else class="scoretext"></text>
+          <view class="scores">
+            <template is="scores" data="{{average:data.rating.average,imagesrc:'../../../'}}"></template>
+          </view>
+          <text wx:if="{{data.rating.average}}" class="author">{{data.ratings_count}}人</text>
+          <text wx:else class="author">暂未上映</text>
+        </view>
+      </view>
+    </view>
+    <view class="titlescores">
+       <block wx:if="{{isanimationdatawreadin}}">
+        <view class="read wread" bindtap="readsin" data-bindtapname="wreadin">
+          <text animation="{{wreadani}}" style="color:white" animation="{{animationdatawreadintext}}" class="readtext">想看</text>
+          <view style="opacity:1" animation="{{animationdatawreadin}}" class="readsin wreadin"></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="read wread" bindtap="readsin" data-bindtapname="wreadin">
+          <text animation="{{wreadani}}" style="color:#ffac2d" animation="{{animationdatawreadintext}}" class="readtext">想看</text>
+          <view style="opacity:0;top:80rpx" animation="{{animationdatawreadin}}" class="readsin wreadin"></view>
+        </view>
+      </block> 
+      <block wx:if="{{isanimationdatarreadin}}">
+        <view class="read rread" bindtap="readsin" data-bindtapname="rreadin">
+          <text animation="{{rreadani}}" style="color:white" animation="{{animationdatarreadintext}}" class="readtext">看过</text>
+          <view class="title_scores readtext">
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+          </view>
+          <view style="opacity:1" animation="{{animationdatarreadin}}" class="readsin rreadin"></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="read rread" bindtap="readsin" data-bindtapname="rreadin">
+          <text animation="{{rreadani}}" style="color:#ffac2d" animation="{{animationdatarreadintext}}" class="readtext">看过</text>
+          <view class="title_scores readtext">
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+          </view>
+          <view style="opacity:0;top:80rpx" animation="{{animationdatarreadin}}" class="readsin rreadin"></view>
+        </view>
+      </block>
+
+
+    </view>
+  </view>
+  <view class="contenter">
+    <text class="notice">简介</text>
+    <text bindtap="gotitles" wx:if="{{datasumbl}}" class="notice_con">{{datasum}}</text>
+    <text bindtap="gotitles" wx:else class="notice_con">{{data.summary}}</text>
+  </view>
+  <!-- <scroll-view scroll-x="{{true}}" class='author' class='authors'>
+    <view wx:for="{{data.casts}}" >
+      <image src='{{item.avatars.small}}' class='authorde'>{{index}}:{{item}}</image>
+    </view>
+  </scroll-view> -->
+  <view class="footer"></view>
+</view>

@@ -1,0 +1,93 @@
+<import src="../../pub/pub.wxml" />
+<!--Book.wxml-->
+<view class="body">
+  <view class="header">
+    <image class='goback' bindtap="goback" src='../../../photos/arrowhead.png'></image>
+    <view class="head_ti">
+    <image class="backimg" src="{{titledata.images.large}}"></image>
+      <image class="headerimg" src="{{titledata.images.large}}"></image>
+    </view>
+    <view class="titles">
+      <view class="titles_left">
+        <text class="title">{{titledata.title}}</text>
+        <text class="author">作者: {{titledata.author[0]}}</text>
+        <text class="author">出版社: {{titledata.publisher}}</text>
+        <text class="author">出版时间: {{titledata.pubdate}}</text>
+      </view>
+      <view class="titles_right">
+        <view class="bgcolor">
+          <text class="author">豆瓣评分</text>
+          <text class="scoretext">{{titledata.rating.average}}</text>
+          <view class="scores">
+            <template is="scores" data="{{average:titledata.rating.average,imagesrc:'../../../'}}"></template>
+          </view>
+          <text class="author">{{titledata.rating.numRaters}}人</text>
+        </view>
+      </view>
+    </view>
+    <view class="titlescores">
+      <block wx:if="{{!iswread}}">
+        <view class="read wread" bindtap="onread" data-name="wread">
+          <text class="readbd" style="color:#ffac2d">想读</text>
+          <view class="lines" style="opacity:0" ></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="read wread" bindtap="onread" data-name="wread">
+          <text class="readbd" style="color:white" >想读</text>
+          <view class="lines" style="opacity:1" ></view>
+        </view>
+      </block>
+      <block wx:if="{{!isiread}}">
+        <view class="read iread" bindtap="onread" data-name="iread">
+          <text class="readbd" style="color:#ffac2d" >在读</text>
+          <view class="lines" style="opacity:0" ></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="read iread" bindtap="onread" data-name="iread">
+          <text class="readbd" style="color:white" >在读</text>
+          <view class="lines" style="opacity:1" ></view>
+        </view>
+      </block>
+      <block wx:if="{{!isrread}}">
+        <view class="read rread" bindtap="onread" data-name="rread">
+          <text class="readbd" style="color:#ffac2d" >读过</text>
+          <view class="title_scores">
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+          </view>
+          <view class="lines" style="opacity:0" ></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="read rread" bindtap="onread" data-name="rread">
+          <text class="readbd" style="color:white" >读过</text>
+          <view class="title_scores">
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+            <image class="score" src="../../../photos/star.png"></image>
+          </view>
+          <view class="lines" style="opacity:1" ></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="contenter">
+    <text class="notice">简介</text>
+    <text wx:if="{{summaryrlbo}}" bindtap="zhankai1"  class="notice_con notice_consum" style="height:auto">{{summaryrl}}</text>
+    <text wx:else bindtap="zhankai1"  class="notice_con notice_consum" style="height:auto">{{titledata.summary}}</text>
+    <text style="border-top:0.5rpx solid #666;width:96%;margin-left:2%;"></text>
+    <text class="notice">作者</text>
+    <text wx:if="{{author_introrlbo}}" class="notice_con notice_conauthor" style="height:auto">{{author_intro}}</text>
+    <text wx:else class="notice_con notice_conauthor" style="height:auto">{{titledata.author_intro}}</text>  
+    <view wx:if="{{zhankaibl}}" bindtap="zhankai" class="zhankai2">展开</view>
+  </view>
+  <view class="footer"></view>
+</view>

@@ -1,0 +1,23 @@
+<import src="../pub/pub.wxml" />
+<!--movies.wxml-->
+<view class="pages">
+  <textarea class='yuedu'>电影</textarea>
+  <template is="contentss" data="{{datas:mvrisbeing,names:'影院热线',totopname:'mving',totopbar:'false'}}" />
+  <view class="banimgs">
+    <image class="banimg" src="../../photos/moviet1.jpg"></image>
+  </view>
+  <template is="contentss" data="{{datas:mvcoming,names:'院线即将上线',linebl:'true',totopname:'coming',totopbar:'false'}}" />
+  <!--123  -->
+  <view class="bodys">
+    <view class="head">
+      <text class="head_l">精选榜单</text>
+      <scroll-view scroll-x="{{true}}" class="toplist">
+         <template is="toplist" data="{{datas:listtop250,listname:'豆瓣Top250',listnameplus:'8分以上好电影',colors:'#e2a21f',totopname:'top250',totopbar:'true'}}"></template>
+         <template is="toplist" data="{{datas:listweek,listname:'本周口碑榜',listnameplus:'8月2日-8月9日',colors:'#37bd64',totopname:'week',totopbar:'false'}}"></template> 
+         <template is="toplist" data="{{datas:listnewmv,listname:'新片榜',listnameplus:'8月2日-8月9日',colors:'#a469c4',totopname:'newmv',totopbar:'false'}}"></template> 
+         <template is="toplist" data="{{datas:listscore,listname:'票房榜',listnameplus:'票房最高排名',colors:'#e66e89',totopname:'score',totopbar:'false'}}"></template> 
+      </scroll-view>
+    </view>
+  </view>
+  <!--231  -->
+</view>

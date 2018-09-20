@@ -1,0 +1,31 @@
+<import src="../../pub/pub.wxml" />
+<view wx:if="{{bls}}" class="tabbars">
+  <view bindtap="tabbar" data-barname="0" class="tabbarsitempa" style="border-bottom: 2px solid #{{tabbar[0]}}">
+    <view class="tabbarsitem Top1-50" style="color:#{{tabbar[0]}}">Top1-50</view>
+  </view>
+  <view bindtap="tabbar" data-barname="1" class="tabbarsitempa" style="border-bottom: 2px solid #{{tabbar[1]}}">
+    <view class="tabbarsitem Top51-100" style="color:#{{tabbar[1]}}">51-100</view>
+  </view>
+  <view bindtap="tabbar" data-barname="2" class="tabbarsitempa" style="border-bottom: 2px solid #{{tabbar[2]}}">
+    <view class="tabbarsitem Top101-150" style="color:#{{tabbar[2]}}">101-150</view>
+  </view>
+  <view bindtap="tabbar" data-barname="3" class="tabbarsitempa" style="border-bottom: 2px solid #{{tabbar[3]}}">
+    <view class="tabbarsitem Top151-200" style="color:#{{tabbar[3]}}">151-200</view>
+  </view>
+  <view bindtap="tabbar" data-barname="4" class="tabbarsitempa" style="border-bottom: 2px solid #{{tabbar[4]}}">
+    <view class="tabbarsitem Top201-250" style="color:#{{tabbar[4]}}">201-250</view>
+  </view>
+
+</view>
+<view class='heads'>
+  全部
+</view>
+<image class='goback' bindtap="goback" src='../../../photos/arrowhead.png'></image>
+<scroll-view scroll-y style="height:99%"   bindscrolltolower="newloads" data-isbook="{{isbook}}">
+  <block wx:for="{{resdata}}" wx:key="">
+    <view class="list" >
+      <template is="lists" data="{{...item,isbook:isbook}}"></template>
+    </view>  
+  </block>
+
+</scroll-view>

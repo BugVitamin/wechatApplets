@@ -1,0 +1,11 @@
+<import src="../pub/pub.wxml" />
+
+<view class="pages">
+	<textarea class='yuedu'>阅读</textarea>
+	<template is="contentss" data="{{datas:newbookdatas,names:'新书速递',totopname:'xinshu',totopbar:false}}" />
+	<view bindtap='gototitl' class="banimgs">
+		<image class="banimg" src="../../photos/menu-t1.jpg"></image>
+	</view>
+	<template is="contentss" data="{{datas:fictionbookdata,names:'最受关注的虚构类图书',totopname:'xugou',totopbar:false}}" />
+	<template is="contentss" data="{{datas:unfictionbookdata,names:'最受关注的非虚构类图书',totopname:'feixugou',totopbar:false}}" />
+</view>

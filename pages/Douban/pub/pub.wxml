@@ -1,0 +1,132 @@
+<template name="contentss">
+  <view class="bodys" style="overflow:hidden">
+    <view class="head">
+      <text class="head_l">{{names}}</text>
+      <view class="alltitle" bindtap="golist" data-topbar="{{totopbar}}" data-topname="{{totopname}}">
+        <text class="head_r">全部</text>
+        <image class="zhankai" src="../../photos/arrow-right.png"></image>
+      </view>
+      <block wx:if="{{linebl}}">
+        <view class="linepa" style="width:85%">
+          <text class="linedate">08.11</text>
+          <view class="line" style="width:100%;margin-left:-240rpx"></view>
+        </view>
+      </block>
+      <scroll-view scroll-x="{{true}}" class="contents" bindscrolltolower="golistbo" data-topbar="{{totopbar}}" data-topname="{{totopname}}">
+        <view wx:for="{{datas}}" bindtap="onatitle" data-titleid="{{item.id}}" wx:key="" class="content">
+          <block wx:if="{{linebl}}">
+              <template is="contentwant" data="{{...item}}" />
+          </block>
+          <block wx:else>
+          <template is="contents" data="{{...item}}" />   
+           </block>
+        </view>
+        <image class="zhankai2" src="../../photos/arrow-right.png"></image> 
+      </scroll-view>
+    </view>
+  </view>
+</template>
+
+<template name="contentwant">
+        <view class="ctimgs">
+          <image class="ctimg" src="{{image}}" lazy-load="true"></image>
+        </view>
+        <text class="cttext">{{title}}</text>
+          <view class="scores">
+            <text class="wantseye">{{wantsnew}}人想看</text>
+           </view>        
+
+</template>
+
+<template name="contents">
+        <view class="ctimgs">
+          <image class="ctimg" src="{{image}}" lazy-load="true"></image>
+        </view>
+        <text class="cttext">{{title}}</text>
+        <block wx:if="{{average}}">
+          <view class="scores">
+            <template is="scores" data="{{average:average,imagesrc:'../../'}}"></template>
+<text class="scoretext">{{average}}</text>
+</view>
+</block>
+<block wx:else>
+  <view class="scores">
+    <text class="scoretext">暂无评分</text>
+  </view>
+</block>
+
+</template>
+
+<template name="toplist">
+        <view bindtap="golist" data-topname="{{totopname}}" data-topbar="{{totopbar}}" class="toplist_top250" style="background:linear-gradient(to bottom, {{colors}}, white) ">
+          <view class="toplistbody">
+            <text class="toplistname">{{listname}}</text>
+            <text class="toplistnameplus">{{listnameplus}}</text>
+            <view class="toplistimgs">
+              <image class="toplistimg toplistimgl" src="{{datas[0].image}}"></image>
+              <image style="box-shadow: 0px 0px 5rpx {{colors}}" class="toplistimg toplistimgcenter" src="{{datas[1].image}}"></image>
+              <image class="toplistimg toplistimgr" src="{{datas[2].image}}"></image>
+            </view>
+          </view>
+        </view>
+</template>
+
+<template name="scores">
+
+            <image wx:if="{{average>1.5}}" class="score" src="{{imagesrc}}photos/star.png"></image>        
+            <image wx:elif="{{1<=average}}" class="score" src="{{imagesrc}}photos/star-s.png"></image>
+            <image wx:else class="score" src="{{imagesrc}}photos/none-star.png"></image>
+
+            <image wx:if="{{average>3.5}}" class="score" src="{{imagesrc}}photos/star.png"></image> 
+            <image wx:elif="{{3<=average}}" class="score" src="{{imagesrc}}photos/star-s.png"></image>
+            <image wx:else class="score" src="{{imagesrc}}photos/none-star.png"></image>
+            
+
+            <image wx:if="{{average>5.5}}" class="score" src="{{imagesrc}}photos/star.png"></image>
+            <image wx:elif="{{5<=average}}" class="score" src="{{imagesrc}}photos/star-s.png"></image> 
+            <image wx:else class="score" src="{{imagesrc}}photos/none-star.png"></image>
+           
+
+            <image wx:if="{{average>7.5}}" class="score" src="{{imagesrc}}photos/star.png"></image>
+            <image wx:elif="{{7<=average}}" class="score" src="{{imagesrc}}photos/star-s.png"></image>
+            <image wx:else class="score" src="{{imagesrc}}photos/none-star.png"></image> 
+          
+            
+            <image wx:if="{{average>9.5}}" class="score" src="{{imagesrc}}photos/star.png"></image>
+            <image wx:elif="{{9<average}}" class="score" src="{{imagesrc}}photos/star-s.png"></image>
+            <image wx:else class="score" src="{{imagesrc}}photos/none-star.png"></image>
+</template>
+
+<template name="lists">
+    <view class="linepa">
+        <view class="linenumberpa"></view>
+        <text class="linenumber">{{countid}}</text>
+        <view class="linenumberpa1"></view>
+    </view>
+    <view class="listi" bindtap="detail" data-id="{{id}}">
+    <!-- <image class="backimgs" src="{{image}}"></image> -->
+      <view class="listi_left">
+        <!-- <image class="backimgs" src="{{image}}"></image> -->
+        <image class="listi_img" src="{{image}}" lazy-load='true'></image>
+      </view>
+      <view class="listi_right">
+        <text class="title">{{title}}</text>
+        <view class="scorespa">
+        <block wx:if="{{average==0}}">
+          <text class="scoresno">暂无评分</text>
+        </block>
+        <block wx:else>
+          <template is="scores" data="{{average:average,imagesrc:'../../../'}}"></template>
+          <text class="scorenumber">{{average}}</text>        
+        </block>
+
+</view>
+<text wx:if="{{isbook}}" class="director">作者: {{directors}}</text>
+<text wx:else class="director">导演: {{directors}}</text>
+<text wx:if="{{isbook}}" class="actor">出版社: {{casts}}</text>
+<text wx:else class="actor">演员: {{casts}}</text>
+</view>
+</view>
+<view wx:if="{{isbook}}" class="Introduction">简介:{{original_title}}</view>
+<view wx:else class="Introduction">原名:{{original_title}}</view>
+</template>
