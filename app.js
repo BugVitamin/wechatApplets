@@ -1,8 +1,8 @@
-/*
+/*测试新上传
  * @Author: Yulin zhao 
  * @Date: 2018-08-10 22:59:48 
  * @Last Modified by: Yulin zhao
- * @Last Modified time: 2018-09-08 14:58:48
+ * @Last Modified time: 2018-09-20 15:23:55
  */
 //app.js
 App({
