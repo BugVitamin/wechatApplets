@@ -1,8 +1,8 @@
-/*
+/*new test
  * @Author: Yulin zhao 
  * @Date: 2018-08-10 22:59:48 
  * @Last Modified by: Yulin zhao
- * @Last Modified time: 2018-10-04 22:15:28
+ * @Last Modified time: 2018-10-04 22:51:30
  */
 //app.js
 App({
